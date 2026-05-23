@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Divakar Kotikalapudi Portfolio Website">
+
+  <meta name="keywords"
+    content="Python Developer, Portfolio, HTML5, CSS3, JavaScript, Responsive Design">
+
+  <meta name="author"
+    content="Divakar Kotikalapudi">
+
+  <title>Divakar Portfolio</title>
+
+  <style>
+
+    :root{
+      --primary:#2563eb;
+      --secondary:#1e40af;
+      --dark:#0d1117;
+      --light:#ffffff;
+      --bg:#f4f4f4;
+      --text:#222;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial,sans-serif;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* Accessibility */
+
+    .skip-link{
+      position:absolute;
+      left:-999px;
+      top:auto;
+    }
+
+    .skip-link:focus{
+      left:10px;
+      top:10px;
+      background:white;
+      color:black;
+      padding:10px;
+      z-index:1000;
+      border:2px solid black;
+    }
+
+    /* Header */
+
+    header{
+      background:var(--dark);
+      color:var(--light);
+      padding:20px;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    nav h2{
+      color:var(--light);
+    }
+
+    nav ul{
+      display:flex;
+      gap:20px;
+      list-style:none;
+    }
+
+    nav a{
+      color:var(--light);
+      text-decoration:none;
+      font-weight:bold;
+      transition:0.3s ease;
+    }
+
+    nav a:hover,
+    nav a:focus{
+      color:#58a6ff;
+    }
+
+    /* Hero Section */
+
+    .hero{
+      background:linear-gradient(to right,var(--primary),var(--secondary));
+      color:white;
+      text-align:center;
+      padding:100px 20px;
+      border-radius:0 0 20px 20px;
+    }
+
+    .hero h1{
+      font-size:clamp(2rem,5vw,4rem);
+      margin-bottom:15px;
+    }
+
+    .hero p{
+      font-size:20px;
+      margin-bottom:15px;
+    }
+
+    /* Main */
+
+    main{
+      max-width:1100px;
+      margin:auto;
+      padding:20px;
+    }
+
+    section{
+      margin-top:60px;
+    }
+
+    h2{
+      margin-bottom:20px;
+      color:var(--secondary);
+      border-bottom:3px solid var(--primary);
+      display:inline-block;
+      padding-bottom:5px;
+    }
+
+    /* Cards */
+
+    .card-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    article{
+      background:white;
+      padding:25px;
+      border-radius:15px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+      transition:0.4s ease;
+    }
+
+    article:hover{
+      transform:translateY(-10px) scale(1.02);
+      box-shadow:0 15px 25px rgba(0,0,0,0.2);
+    }
+
+    article h3{
+      margin-bottom:10px;
+      color:var(--primary);
+    }
+
+    ul li{
+      margin-bottom:10px;
+    }
+
+    /* Form */
+
+    form{
+      display:flex;
+      flex-direction:column;
+      gap:15px;
+      background:white;
+      padding:25px;
+      border-radius:15px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    input,
+    textarea{
+      padding:12px;
+      border:1px solid #ccc;
+      border-radius:8px;
+      font-size:16px;
+      transition:0.3s;
+    }
+
+    input:focus,
+    textarea:focus{
+      outline:none;
+      border-color:var(--primary);
+      box-shadow:0 0 8px rgba(37,99,235,0.4);
+    }
+
+    button{
+      background:linear-gradient(to right,var(--primary),var(--secondary));
+      color:white;
+      border:none;
+      padding:14px;
+      font-size:16px;
+      cursor:pointer;
+      border-radius:8px;
+      transition:0.3s ease;
+    }
+
+    button:hover,
+    button:focus{
+      transform:scale(1.03);
+      opacity:0.9;
+    }
+
+    /* Footer */
+
+    footer{
+      background:var(--dark);
+      color:white;
+      text-align:center;
+      padding:30px;
+      margin-top:60px;
+    }
+
+    footer p{
+      margin:10px 0;
+    }
+
+    footer a{
+      color:#58a6ff;
+      text-decoration:none;
+    }
+
+    footer a:hover{
+      text-decoration:underline;
+    }
+
+    /* Responsive */
+
+    @media(max-width:768px){
+
+      nav{
+        flex-direction:column;
+        gap:15px;
+      }
+
+      nav ul{
+        flex-direction:column;
+        text-align:center;
+      }
+
+      .hero{
+        padding:70px 20px;
+      }
+
+      .hero p{
+        font-size:18px;
+      }
+
+      .card-container{
+        grid-template-columns:1fr;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Accessibility -->
+
+  <a href="#main-content"
+    class="skip-link">
+
+    Skip to Main Content
+
+  </a>
+
+  <!-- Header -->
+
+  <header>
+
+    <nav
+      role="navigation"
+      aria-label="Main Navigation">
+
+      <h2>Divakar Portfolio</h2>
+
+      <ul>
+
+        <li><a href="#home">Home</a></li>
+
+        <li><a href="#about">About</a></li>
+
+        <li><a href="#skills">Skills</a></li>
+
+        <li><a href="#projects">Projects</a></li>
+
+        <li><a href="#internships">Internships</a></li>
+
+        <li><a href="#education">Education</a></li>
+
+        <li><a href="#contact">Contact</a></li>
+
+      </ul>
+
+    </nav>
+
+  </header>
+
+  <!-- Main -->
+
+  <main id="main-content">
+
+    <!-- Hero -->
+
+    <section
+      class="hero"
+      id="home">
+
+      <h1>Hi, I'm Divakar Kotikalapudi</h1>
+
+      <p>
+        Aspiring Python Developer | ECE Student |
+        Front-End Learner
+      </p>
+
+      <p>
+        Passionate about Python, Web Development,
+        AI/ML, and Problem Solving
+      </p>
+
+    </section>
+
+    <!-- About -->
+
+    <section id="about">
+
+      <h2>About Me</h2>
+
+      <article>
+
+        <p>
+
+          I am an Electronics and Communication Engineering
+          student with knowledge of Python, HTML, CSS,
+          JavaScript, Git/GitHub, and basic React concepts.
+
+          I enjoy building projects, learning modern
+          technologies, and improving my problem-solving
+          skills through practical development experience.
+
+          My goal is to grow as a software developer and
+          contribute to impactful and innovative
+          technology solutions.
+
+        </p>
+
+      </article>
+
+    </section>
+
+    <!-- Skills -->
+
+    <section id="skills">
+
+      <h2>Technical Skills</h2>
+
+      <div class="card-container">
+
+        <article>
+          <h3>Programming Languages</h3>
+          <p>Python, JavaScript</p>
+        </article>
+
+        <article>
+          <h3>Web Technologies</h3>
+          <p>HTML5, CSS3, Basic React</p>
+        </article>
+
+        <article>
+          <h3>Core Concepts</h3>
+          <p>OOP Basics, File Handling, Problem Solving</p>
+        </article>
+
+        <article>
+          <h3>Tools</h3>
+          <p>Git, GitHub, n8n Basics</p>
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- Projects -->
+
+    <section id="projects">
+
+      <h2>Projects</h2>
+
+      <div class="card-container">
+
+        <article>
+
+          <h3>Student Management System</h3>
+
+          <p>
+            Developed a Python application with CRUD
+            operations for managing student records.
+          </p>
+
+        </article>
+
+        <article>
+
+          <h3>Weather App using Python</h3>
+
+          <p>
+            Built a weather application using API
+            integration and JSON handling.
+          </p>
+
+        </article>
+
+        <article>
+
+          <h3>Portfolio Website</h3>
+
+          <p>
+            Designed an accessible and responsive
+            portfolio website using semantic HTML5
+            and advanced CSS3 concepts.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- Internships -->
+
+    <section id="internships">
+
+      <h2>Internships & Experience</h2>
+
+      <div class="card-container">
+
+        <article>
+
+          <h3>Deloitte Data Analytics Virtual Experience</h3>
+
+          <p>
+            Worked on data analysis and cleaning tasks
+            to derive business insights.
+          </p>
+
+        </article>
+
+        <article>
+
+          <h3>AI/ML Virtual Intern - Edu Skills</h3>
+
+          <p>
+            Learned TensorFlow, neural networks,
+            and machine learning fundamentals.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- Education -->
+
+    <section id="education">
+
+      <h2>Education</h2>
+
+      <article>
+
+        <h3>B.Tech in ECE</h3>
+
+        <p>
+          Gayatri Vidya Parishad College of Engineering
+        </p>
+
+        <p>
+          2023 - Present | CGPA: 8.46
+        </p>
+
+      </article>
+       <br>
+
+      <article>
+
+        <h3>
+          Intermediate Education
+        </h3>
+
+        <p>
+
+          Sasi Junior College, Tanuku
+
+        </p>
+
+        <p>
+
+          2021 - 2023 | Score: 953
+
+        </p>
+
+      </article>
+    </section>
+
+    <!-- Contact -->
+
+    <section id="contact">
+
+      <h2>Contact Me</h2>
+
+      <form
+        action="https://formsubmit.co/divakarkotikalapudi1@gmail.com"
+        method="POST">
+
+        <input
+          type="hidden"
+          name="_captcha"
+          value="false">
+
+        <label for="name">Full Name</label>
+
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter your full name"
+          required>
+
+        <label for="email">Email Address</label>
+
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+          required>
+
+        <label for="message">Message</label>
+
+        <textarea
+          id="message"
+          name="message"
+          rows="6"
+          placeholder="Enter your message"
+          required></textarea>
+
+        <button type="submit">
+
+          Send Message
+
+        </button>
+
+      </form>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+
+  <footer>
+
+    <p>
+      © 2026 Divakar Kotikalapudi |
+      All Rights Reserved
+    </p>
+
+    <p>
+
+      Email:
+      <a href="mailto:divakarkotikalapudi1@gmail.com">
+        divakarkotikalapudi1@gmail.com
+      </a>
+
+    </p>
+
+    <p>
+
+      LinkedIn:
+      <a
+        href="https://linkedin.com/in/divakarkotikalapudi"
+        target="_blank">
+
+        linkedin.com/in/divakarkotikalapudi
+
+      </a>
+
+    </p>
+
+    <p>
+
+      Location:
+      Visakhapatnam, Andhra Pradesh
+
+    </p>
+
+  </footer>
+
+</body>
+
+</html>
