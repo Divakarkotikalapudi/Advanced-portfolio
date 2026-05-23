@@ -5,17 +5,19 @@
 
   <meta charset="UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
   <!-- SEO Meta Tags -->
+
   <meta name="description"
-    content="Divakar Kotikalapudi Portfolio Website">
+        content="Divakar Kotikalapudi Portfolio Website">
 
   <meta name="keywords"
-    content="Python Developer, Portfolio, HTML5, CSS3, JavaScript, Responsive Design">
+        content="Python Developer, Portfolio, HTML5, CSS3, Responsive Design">
 
   <meta name="author"
-    content="Divakar Kotikalapudi">
+        content="Divakar Kotikalapudi">
 
   <title>Divakar Portfolio</title>
 
@@ -45,6 +47,7 @@
       background:var(--bg);
       color:var(--text);
       line-height:1.6;
+      transition:0.4s ease;
     }
 
     /* Accessibility */
@@ -108,7 +111,10 @@
     /* Hero Section */
 
     .hero{
-      background:linear-gradient(to right,var(--primary),var(--secondary));
+      background:linear-gradient(to right,
+      var(--primary),
+      var(--secondary));
+
       color:white;
       text-align:center;
       padding:100px 20px;
@@ -149,7 +155,9 @@
 
     .card-container{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      grid-template-columns:
+      repeat(auto-fit,minmax(250px,1fr));
+
       gap:25px;
     }
 
@@ -163,16 +171,14 @@
 
     article:hover{
       transform:translateY(-10px) scale(1.02);
-      box-shadow:0 15px 25px rgba(0,0,0,0.2);
+
+      box-shadow:0 15px 25px
+      rgba(0,0,0,0.2);
     }
 
     article h3{
       margin-bottom:10px;
       color:var(--primary);
-    }
-
-    ul li{
-      margin-bottom:10px;
     }
 
     /* Form */
@@ -200,11 +206,16 @@
     textarea:focus{
       outline:none;
       border-color:var(--primary);
-      box-shadow:0 0 8px rgba(37,99,235,0.4);
+
+      box-shadow:0 0 8px
+      rgba(37,99,235,0.4);
     }
 
     button{
-      background:linear-gradient(to right,var(--primary),var(--secondary));
+      background:linear-gradient(to right,
+      var(--primary),
+      var(--secondary));
+
       color:white;
       border:none;
       padding:14px;
@@ -243,30 +254,88 @@
       text-decoration:underline;
     }
 
+    /* Dark Theme */
+
+    @media (prefers-color-scheme: dark){
+
+      body{
+        background:#111827;
+        color:white;
+      }
+
+      article,
+      form{
+        background:#1f2937;
+        color:white;
+      }
+
+      input,
+      textarea{
+        background:#374151;
+        color:white;
+        border:none;
+      }
+
+      footer{
+        background:black;
+      }
+
+      h2,
+      h3{
+        color:#60a5fa;
+      }
+
+    }
+
     /* Responsive */
 
     @media(max-width:768px){
 
       nav{
+        display:flex;
         flex-direction:column;
+        align-items:center;
         gap:15px;
       }
 
       nav ul{
-        flex-direction:column;
-        text-align:center;
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:12px;
+        padding:0;
+      }
+
+      nav ul li{
+        list-style:none;
+      }
+
+      nav a{
+        font-size:14px;
       }
 
       .hero{
         padding:70px 20px;
       }
 
+      .hero h1{
+        font-size:2rem;
+      }
+
       .hero p{
-        font-size:18px;
+        font-size:16px;
       }
 
       .card-container{
         grid-template-columns:1fr;
+      }
+
+      article{
+        padding:20px;
+      }
+
+      form{
+        padding:20px;
       }
 
     }
@@ -280,9 +349,9 @@
   <!-- Accessibility -->
 
   <a href="#main-content"
-    class="skip-link">
+     class="skip-link">
 
-    Skip to Main Content
+     Skip to Main Content
 
   </a>
 
@@ -324,20 +393,29 @@
 
     <!-- Hero -->
 
-    <section
-      class="hero"
-      id="home">
+    <section class="hero"
+             id="home">
 
-      <h1>Hi, I'm Divakar Kotikalapudi</h1>
+      <h1>
+
+        Hi, I'm Divakar Kotikalapudi
+
+      </h1>
 
       <p>
-        Aspiring Python Developer | ECE Student |
+
+        Aspiring Python Developer |
+        ECE Student |
         Front-End Learner
+
       </p>
 
       <p>
-        Passionate about Python, Web Development,
+
+        Passionate about Python,
+        Web Development,
         AI/ML, and Problem Solving
+
       </p>
 
     </section>
@@ -352,17 +430,15 @@
 
         <p>
 
-          I am an Electronics and Communication Engineering
-          student with knowledge of Python, HTML, CSS,
-          JavaScript, Git/GitHub, and basic React concepts.
+          I am an Electronics and
+          Communication Engineering student
+          with knowledge of Python,
+          HTML, CSS, JavaScript,
+          Git/GitHub, and basic React concepts.
 
-          I enjoy building projects, learning modern
-          technologies, and improving my problem-solving
-          skills through practical development experience.
-
-          My goal is to grow as a software developer and
-          contribute to impactful and innovative
-          technology solutions.
+          I enjoy building projects,
+          learning modern technologies,
+          and improving my problem-solving skills.
 
         </p>
 
@@ -379,23 +455,45 @@
       <div class="card-container">
 
         <article>
+
           <h3>Programming Languages</h3>
+
           <p>Python, JavaScript</p>
+
         </article>
 
         <article>
+
           <h3>Web Technologies</h3>
+
           <p>HTML5, CSS3, Basic React</p>
+
         </article>
 
         <article>
+
           <h3>Core Concepts</h3>
-          <p>OOP Basics, File Handling, Problem Solving</p>
+
+          <p>
+
+            OOP Basics,
+            File Handling,
+            Problem Solving
+
+          </p>
+
         </article>
 
         <article>
+
           <h3>Tools</h3>
-          <p>Git, GitHub, n8n Basics</p>
+
+          <p>
+
+            Git, GitHub, n8n Basics
+
+          </p>
+
         </article>
 
       </div>
@@ -412,34 +510,55 @@
 
         <article>
 
-          <h3>Student Management System</h3>
+          <h3>
+
+            Student Management System
+
+          </h3>
 
           <p>
-            Developed a Python application with CRUD
-            operations for managing student records.
+
+            Developed a Python application
+            with CRUD operations for
+            managing student records.
+
           </p>
 
         </article>
 
         <article>
 
-          <h3>Weather App using Python</h3>
+          <h3>
+
+            Weather App using Python
+
+          </h3>
 
           <p>
-            Built a weather application using API
-            integration and JSON handling.
+
+            Built a weather application
+            using API integration and
+            JSON handling.
+
           </p>
 
         </article>
 
         <article>
 
-          <h3>Portfolio Website</h3>
+          <h3>
+
+            Portfolio Website
+
+          </h3>
 
           <p>
-            Designed an accessible and responsive
-            portfolio website using semantic HTML5
-            and advanced CSS3 concepts.
+
+            Designed an accessible and
+            responsive portfolio website
+            using semantic HTML5 and
+            advanced CSS3 concepts.
+
           </p>
 
         </article>
@@ -458,22 +577,38 @@
 
         <article>
 
-          <h3>Deloitte Data Analytics Virtual Experience</h3>
+          <h3>
+
+            Deloitte Data Analytics
+            Virtual Experience
+
+          </h3>
 
           <p>
-            Worked on data analysis and cleaning tasks
-            to derive business insights.
+
+            Worked on data analysis and
+            cleaning tasks to derive
+            business insights.
+
           </p>
 
         </article>
 
         <article>
 
-          <h3>AI/ML Virtual Intern - Edu Skills</h3>
+          <h3>
+
+            AI/ML Virtual Intern
+            - Edu Skills
+
+          </h3>
 
           <p>
-            Learned TensorFlow, neural networks,
+
+            Learned TensorFlow,
+            neural networks,
             and machine learning fundamentals.
+
           </p>
 
         </article>
@@ -493,35 +628,47 @@
         <h3>B.Tech in ECE</h3>
 
         <p>
-          Gayatri Vidya Parishad College of Engineering
+
+          Gayatri Vidya Parishad
+          College of Engineering
+
         </p>
 
         <p>
-          2023 - Present | CGPA: 8.46
+
+          2023 - Present |
+          CGPA: 8.46
+
         </p>
 
       </article>
-       <br>
+
+      <br>
 
       <article>
 
         <h3>
+
           Intermediate Education
+
         </h3>
 
         <p>
 
-          Sasi Junior College, Tanuku
+          Sasi Junior College,
+          Tanuku
 
         </p>
 
         <p>
 
-          2021 - 2023 | Score: 953
+          2021 - 2023 |
+          Score: 953
 
         </p>
 
       </article>
+
     </section>
 
     <!-- Contact -->
@@ -539,7 +686,11 @@
           name="_captcha"
           value="false">
 
-        <label for="name">Full Name</label>
+        <label for="name">
+
+          Full Name
+
+        </label>
 
         <input
           type="text"
@@ -548,7 +699,11 @@
           placeholder="Enter your full name"
           required>
 
-        <label for="email">Email Address</label>
+        <label for="email">
+
+          Email Address
+
+        </label>
 
         <input
           type="email"
@@ -557,7 +712,11 @@
           placeholder="Enter your email"
           required>
 
-        <label for="message">Message</label>
+        <label for="message">
+
+          Message
+
+        </label>
 
         <textarea
           id="message"
@@ -583,15 +742,21 @@
   <footer>
 
     <p>
-      © 2026 Divakar Kotikalapudi |
+
+      © 2026
+      Divakar Kotikalapudi |
       All Rights Reserved
+
     </p>
 
     <p>
 
       Email:
+
       <a href="mailto:divakarkotikalapudi1@gmail.com">
+
         divakarkotikalapudi1@gmail.com
+
       </a>
 
     </p>
@@ -599,11 +764,12 @@
     <p>
 
       LinkedIn:
-      <a
-        href="https://linkedin.com/in/divakarkotikalapudi"
-        target="_blank">
 
-        linkedin.com/in/divakarkotikalapudi
+      <a href="https://linkedin.com/in/divakarkotikalapudi"
+         target="_blank"
+         rel="noopener noreferrer">
+
+         linkedin.com/in/divakarkotikalapudi
 
       </a>
 
@@ -612,7 +778,8 @@
     <p>
 
       Location:
-      Visakhapatnam, Andhra Pradesh
+      Visakhapatnam,
+      Andhra Pradesh
 
     </p>
 
